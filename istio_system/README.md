@@ -6,41 +6,41 @@ These commands help you perform cleanup tasks related to Istio in your Kubernete
 
 **Delete an Istio gateway:**
 
-@bash
+```bash
 $ kubectl delete gateway kiada-gateway -n istio-system
-@
+```
 
 This command deletes the Istio gateway named "kiada-gateway" in the "istio-system" namespace. Gateways are used for defining ingress and egress points for traffic in Istio.
 
 **Delete an Istio virtual service:**
 
-@bash
+```bash
 $ kubectl delete virtualservice kiada -n istio-system
-@
+```
 
 Use this command to delete the Istio virtual service named "kiada" in the "istio-system" namespace. Virtual services define routing rules for traffic in Istio.
 
 **Delete all pods in the Istio system namespace:**
 
-@bash
+```bash
 $ kubectl delete pods --all -n istio-system
-@
+```
 
 This command deletes all pods in the "istio-system" namespace. Be cautious when using this command, as it removes all Istio-related pods, which may affect the functionality of Istio in your cluster.
 
 **Delete the Istio system namespace:**
 
-@bash
+```bash
 $ kubectl delete namespace istio-system
-@
+```
 
 Use this command to delete the entire "istio-system" namespace, which includes all Istio-related resources and configurations. Be careful when deleting namespaces, as it can lead to data loss.
 
 **List Istio Gateways and Virtual Services:**
 
-@bash
+```bash
 $ kubectl get gateway,virtualservice -n istio-system
-@
+```
 
 You can use this command to list Istio gateways and virtual services in the "istio-system" namespace before performing deletions.
 
