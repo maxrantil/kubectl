@@ -7,8 +7,8 @@ Logs are a critical component for debugging and monitoring applications in Kuber
 ---
 ### Basic Log Retrieval
 
-    Fetch logs of a specific pod:
-    To retrieve the logs of a specific pod:
+**Fetch logs of a specific pod:**
+**To retrieve the logs of a specific pod:**
 
 ```bash
 $ kubectl logs [POD_NAME]
@@ -16,8 +16,8 @@ $ kubectl logs [POD_NAME]
 
     Example: $ kubectl logs kiada
 
-Fetch logs of a specific container within a pod:
-If a pod has multiple containers, specify the container name to fetch its logs:
+**Fetch logs of a specific container within a pod:**
+**If a pod has multiple containers, specify the container name to fetch its logs:**
 
 ```bash
 $ kubectl logs [POD_NAME] -c [CONTAINER_NAME]
@@ -30,8 +30,8 @@ $ kubectl logs [POD_NAME] -c [CONTAINER_NAME]
 ---
 ### Streaming Logs
 
-    Stream logs in real-time:
-    The -f or --follow flag allows you to stream logs:
+**Stream logs in real-time:**
+**The -f or --follow flag allows you to stream logs:**
 
 ```bash
 $ kubectl logs [POD_NAME] -f
@@ -44,7 +44,7 @@ $ kubectl logs [POD_NAME] -f
 ---
 ### Advanced Log Retrieval
 
-    Add timestamps to logs:
+**Add timestamps to logs:**
 
 ```bash
 $ kubectl logs [POD_NAME] --timestamps=true
@@ -52,7 +52,7 @@ $ kubectl logs [POD_NAME] --timestamps=true
 
     Example: $ kubectl logs kiada --timestamps=true
 
-Retrieve logs since a specific time duration:
+**Retrieve logs since a specific time duration:**
 
 ```bash
 $ kubectl logs [POD_NAME] --since=[DURATION]
@@ -60,7 +60,7 @@ $ kubectl logs [POD_NAME] --since=[DURATION]
 
     Example: $ kubectl logs kiada --since=2m
 
-Retrieve logs since a specific timestamp:
+**Retrieve logs since a specific timestamp:**
 
 ```bash
 $ kubectl logs [POD_NAME] --since-time=[TIMESTAMP]
@@ -68,7 +68,7 @@ $ kubectl logs [POD_NAME] --since-time=[TIMESTAMP]
 
     Example: $ kubectl logs kiada --since-time=2020-02-01T09:50:00Z
 
-Tail logs (show only the last few lines):
+**Tail logs (show only the last few lines):**
 
 ```bash
 $ kubectl logs [POD_NAME] --tail=[NUMBER_OF_LINES]
@@ -76,7 +76,7 @@ $ kubectl logs [POD_NAME] --tail=[NUMBER_OF_LINES]
 
     Example: $ kubectl logs kiada --tail=10
 
-Retrieve logs from all containers within a pod:
+**Retrieve logs from all containers within a pod:**
 
 ```bash
 $ kubectl logs [POD_NAME] --all-containers
@@ -84,7 +84,7 @@ $ kubectl logs [POD_NAME] --all-containers
 
     Example: $ kubectl logs kiada-ssl --all-containers
 
-Retrieve logs from a previous instance of a container:
+**Retrieve logs from a previous instance of a container:**
 
 ```bash
 $ kubectl logs [POD_NAME] -c [CONTAINER_NAME] -p
@@ -95,8 +95,8 @@ $ kubectl logs [POD_NAME] -c [CONTAINER_NAME] -p
 ---
 ### Fetching Logs Using Selectors and Resources
 
-    Using label selectors:
-    Retrieve logs from pods with specific labels:
+**Using label selectors:**
+**Retrieve logs from pods with specific labels:**
 
 ```bash
 $ kubectl logs -l [LABEL_SELECTOR] -c [CONTAINER_NAME]
@@ -106,8 +106,8 @@ $ kubectl logs -l [LABEL_SELECTOR] -c [CONTAINER_NAME]
       $ kubectl logs -l app=kiada -c envoy
       $ kubectl logs -l app=kiada --all-containers --prefix
 
-Fetching logs from specific resource types:
-Retrieve logs from pods associated with specific Kubernetes resources like ReplicaSets (rs) or Jobs (job):
+**Fetching logs from specific resource types:**
+**Retrieve logs from pods associated with specific Kubernetes resources like ReplicaSets (rs) or Jobs (job):**
 
 ```bash
 $ kubectl logs [RESOURCE_TYPE]/[RESOURCE_NAME] -c [CONTAINER_NAME]
