@@ -1,4 +1,3 @@
-```markdown
 # Kubernetes Resource Retrieval using kubectl
 
 The `kubectl get` command allows you to retrieve various Kubernetes resources, such as nodes, deployments, pods, services, and more.
